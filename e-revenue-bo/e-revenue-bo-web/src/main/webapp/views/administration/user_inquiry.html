@@ -1,0 +1,155 @@
+<div class="page" ng-controller="usersCtrl">
+    <form role="form" class="formFadeIn" ng-hide="!userVerify && bioView==true">
+        <section class="panel panel-default table-dynamic">
+            <div class="panel-heading input-sm">
+                <strong><span class="glyphicon glyphicon-th input-sm "></span>
+                    Validate User</strong>
+            </div>
+            <div class="panel-body">
+                <div class="form-inline">
+                    <div class="form-group col-sm-12">
+                        <div class="col-sm-12" style="display:table-cell; vertical-align:middle; text-align:center">
+                            <a href="javascript:;">
+                                <img alt="Click to Verify " src="images/enroll/noImage_1.png" style="width:300px;height:320px;" capturev/>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="panel-body">
+                <div class="col-lg-12" style="text-align: center">
+                    <a class="btn btn-warning" ng-click="resetDevice()" id="rdb"><i
+                            class="glyphicon glyphicon-refresh"></i> Reset-Device </a>
+                    <a id="rd"
+                       class="btn btn-danger growl-type" ng-click="cancelUserInq()">
+                        <i class="glyphicon glyphicon-warning-sign"></i> Cancel
+                    </a>
+                </div>
+            </div>
+
+        </section>
+    </form>
+
+    <!--End Customer Inquiry-->
+
+    <!--Customer Details-->
+    <form class="form-horizontal formFadeIn" role="form"
+          ng-hide="!bioView">
+        <section class="panel panel-default">
+            <div class="panel-heading input-sm">
+                <strong><span class="glyphicon glyphicon-th input-sm"></span>
+                    USER DETAILS</strong>
+            </div>
+            <div class="panel-body">
+
+                <div class="form-group col-sm-12 noPadding">
+
+                    <div class="col-sm-6 noPadding">
+                        <div class="col-sm-4" style="text-align: right;">
+                            <label for="inpMemberSurname" class="control-label input-sm">FULL NAME</label>
+                        </div>
+                        <div class="col-sm-8">
+                            <input type="text" class="form-control input-sm"
+                                   id="inpMemberSurname" placeholder="name"
+                                   ng-model="user.userFullName" readonly>
+                        </div>
+                    </div>
+                    <div class="col-sm-6 noPadding">
+                        <div class="col-sm-4" style="text-align: right;">
+                            <label for="mobile" class="control-label input-sm">NATIONAL ID</label>
+                        </div>
+                        <div class="col-sm-8">
+                            <input type="text" class="form-control input-sm"
+                                   id="mobile" placeholder="NATIONAL ID" ng-model="user.userNationalId" readonly>
+                        </div>
+                    </div>
+
+                </div>
+                <div class="form-group col-sm-12 noPadding">
+                    <div class="col-sm-6 noPadding">
+                        <div class="col-sm-4" style="text-align: right;">
+                            <label for="firstName" class="control-label input-sm">EMAIL
+                            </label>
+                        </div>
+                        <div class="col-sm-8">
+                            <input type="text" class="form-control input-sm"
+                                   id="firstName" placeholder="email" ng-model="user.userEmail"
+                                   readonly>
+                        </div>
+                    </div>
+                    <!--<div class="col-sm-6 noPadding">-->
+                    <!--<div class="col-sm-4" style="text-align: right;">-->
+                    <!--<label for="lastName" class="control-label input-sm">LAST NAME-->
+                    <!--</label>-->
+                    <!--</div>-->
+                    <!--<div class="col-sm-8">-->
+                    <!--<input type="text" class="form-control input-sm"-->
+                    <!--id="lastName"-->
+                    <!--placeholder="Lastname" ng-model="lastName"-->
+                    <!--readonly>-->
+                    <!--</div>-->
+                    <!--</div>-->
+                    <div class="col-sm-6 noPadding">
+                        <div class="col-sm-4" style="text-align: right;">
+                            <label for="suppCode" class="control-label input-sm">PHONE NUMBER</label>
+                        </div>
+                        <div class="col-sm-8">
+                            <input type="text" class="form-control input-sm"
+                                   id="suppCode" placeholder="" ng-model="user.userPhone"
+                                   readonly>
+                        </div>
+                    </div>
+                </div>
+                <div class="form-group col-sm-12 noPadding">
+
+                    <div class="col-sm-6 noPadding">
+                        <div class="col-sm-4" style="text-align: right;">
+                            <label for="address" class="control-label input-sm">MARKET ASSIGNED</label>
+                        </div>
+                        <div class="col-sm-8">
+                            <input type="text" class="form-control input-sm"
+                                   id="address" ng-model="user.marketName" readonly>
+
+                        </div>
+                    </div>
+
+                    <!--<div class="col-sm-6 noPadding">-->
+                        <!--<div class="col-sm-4" style="text-align: right;">-->
+                            <!--<label for="email" class="control-label input-sm">ADDRESS 2</label>-->
+                        <!--</div>-->
+                        <!--<div class="col-sm-8">-->
+                            <!--<input type="text" class="form-control input-sm"-->
+                                   <!--id="email" placeholder="" ng-model="email"-->
+                                   <!--readonly>-->
+                        <!--</div>-->
+                    <!--</div>-->
+                </div>
+
+                <!--<div class="form-group col-sm-12 noPadding">-->
+
+                <!--<div class="col-sm-6 noPadding">-->
+                <!--<div class="col-sm-4" style="text-align: right;">-->
+                <!--<label for="postalCode"-->
+                <!--class="control-label input-sm">ADDRESS 2</label>-->
+                <!--</div>-->
+                <!--<div class="col-sm-8">-->
+                <!--<input type="text" class="form-control input-sm"-->
+                <!--id="postalCode" placeholder=""-->
+                <!--ng-model="postalCode" readonly>-->
+                <!--</div>-->
+                <!--</div>-->
+                <!--</div>-->
+
+
+            </div>
+            <div class="form-group">
+                <div class="col-lg-12" style="text-align: center">
+                    <a id="rd"
+                       class="btn btn-danger growl-type" ng-click="cancelUserInq()">
+                        <i class="icon-warning-sign"></i> Cancel
+                    </a>
+                </div>
+            </div>
+        </section>
+    </form>
+</div>
